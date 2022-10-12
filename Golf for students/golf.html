@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Popups</title>
+    <link rel="stylesheet" href="golfGame.css">
+</head>
+
+<body class="golf-background">
+    <h1 class="h1">Results</h1>
+    <img src="#" id="img">
+    <input type="button" value="Play Again" id="btn" onclick="window.location.reload(true)">
+
+
+
+    <script>
+        
+        document.body.style.backgroundImage = "url('golf-bkg.jpeg')";
+        var par1 = window.prompt("Which Par Course?:");
+        var par = parseInt(par1);
+
+        var strokes1 = window.prompt("How many strokes were played?:");
+        var strokes = parseInt(strokes1);
+
+        if (strokes <= 0 ) {
+            document.getElementById("img").src = "error.png";
+        } else if (strokes == 1) {
+            document.getElementById("img").src = "golf2.png"; 
+        } else if (strokes <= par - 2) {
+            document.getElementById("img").src = "golf3.png";
+        } else if (strokes === par - 1) {
+            document.getElementById("img").src = "golf4.png";
+        } else if (strokes === par && strokes != undefined) {
+            document.getElementById("img").src = "golf5.png";
+        } else if (strokes === par + 1) {
+            document.getElementById("img").src = "golf6.png";
+        } else if (strokes === par + 2) {
+            document.getElementById("img").src = "golf7.png";
+        } else if (strokes <= par + 3) {
+            document.getElementById("img").src = "golf8.png";
+        } else if (strokes <= par + 4) {
+            document.getElementById("img").src = "golf9.png";
+        } else {
+            alert("Game Over!")
+            document.getElementById("img").src = "over.png";
+        }
+    </script>
+
+</body>
+
+</html>
